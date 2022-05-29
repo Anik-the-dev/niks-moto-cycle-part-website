@@ -29,6 +29,11 @@ body {
     font-size: small;
 }
 
+.offwhiter-bg {
+    background-color: #F8F9FA;
+}
+
+
 
 .raw-btn {
     display: inline-block;
