@@ -7,7 +7,7 @@ const UserTable = ({ user, refetch, index }) => {
     const { email, role, name} = user;
     const [part, setPart] = useState([user])
     const makeAdmin = () => {
-        fetch(`https://guarded-lowlands-14993.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:4000//user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const UserTable = ({ user, refetch, index }) => {
     const handleDeleteItem = (email) => {
         const proceed = window.confirm("Want to Delete this Person?")
         if (proceed) {
-            const url = `https://guarded-lowlands-14993.herokuapp.com/user/${email}`
+            const url = `http://localhost:4000//user/${email}`
             fetch(url, {
                 method: 'delete'
             }).then(res => res.json())

@@ -13,7 +13,7 @@ const OrderTable = ({ singleItem }) => {
         const handleDeleteItem = (id) => {
             const proceed = window.confirm("Want to Delete?")
             if (proceed) {
-                const url = `https://guarded-lowlands-14993.herokuapp.com/orders/${id}`
+                const url = `http://localhost:4000//orders/${id}`
                 fetch(url, {
                     method: 'delete'
                 }).then(res => res.json())

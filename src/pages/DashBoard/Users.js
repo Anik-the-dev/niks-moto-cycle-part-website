@@ -1,12 +1,12 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import { useQuery } from 'react-query';
-import Loading from '../../shared/Loading';
+import Loading from '../Loading';
 import UserTable from './UserTable';
 
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://guarded-lowlands-14993.herokuapp.com/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:4000//user', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

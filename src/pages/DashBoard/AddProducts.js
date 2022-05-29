@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import monitor from '../../images/redmi-01-500x500.jpg'
+import wheel from '../../images/wheelsmart.jpg'
 import auth from '../../firebase.init';
 import axios from 'axios';
 import {toast } from 'react-toastify';
@@ -19,7 +19,7 @@ const AddProducts = () => {
     const handleAddItems = (e) => {
         e.preventDefault()
         const data = { name, price, description, image, available_quantity, minimum__ordered_quantity }
-        axios.post('https://guarded-lowlands-14993.herokuapp.com/products', data).then(res => toast("Product Added Successfully!"))
+        axios.post('http://localhost:4000//products', data).then(res => toast("Product Added Successfully!"))
 
         e.target.reset()
 
@@ -32,7 +32,7 @@ const AddProducts = () => {
             <Row className='mx-auto my-5 d-flex justify-content-between align-items-center text-center gap-3'>
                 <Col sm='6' className=' text-center'>
                     <div className='login-text my-4'>
-                        <img className='img-fluid p-3' src={monitor} alt='Monitor' />
+                        <img className='img-fluid p-3' src={wheel} alt='wheel' />
 
 
 

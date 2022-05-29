@@ -12,28 +12,7 @@ const Dashboard = () => {
     const [admin] = useAdmin(user);
 
     return (
-        // <>
 
-        //     <h2 className='fs-1 text-center'>Dashboard</h2>
-        //     <Outlet></Outlet>
-
-        //     <Offcanvas className='sidebar-nav' show={show} backdrop={false}>
-
-
-        //         <Offcanvas.Header>
-        //             <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        //         </Offcanvas.Header>
-        //         <Offcanvas.Body>
-        //             <label for='dashboard-btn'></label>
-        //             <ul>
-        //                 <li><Link to = "/dashboard">My Orders</Link></li>
-        //                 <li><Link to = "/dashboard/review">My Review</Link></li>
-        //                 <li><Link to = "/dashboard/profile">My Profile</Link></li>
-        //             </ul>
-
-        //         </Offcanvas.Body>
-        //     </Offcanvas>
-        // </>
         <div className='dashboard-width ms-auto'>
             <Outlet></Outlet>
 

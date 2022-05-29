@@ -13,24 +13,9 @@ const MyOrder = () => {
     const navigate = useNavigate()
 
 
-    // useEffect(() => {
-    //     const getMyOrders = async () => {
-    //         const email = user?.email
-
-    //         const url = `https://guarded-lowlands-14993.herokuapp.com/orders?email=${email}`;
-    //         const { data } = await axios.get(url)
-
-    //         setDatas(data)
-
-
-
-    //     }
-    //     getMyOrders()
-    // }, [user])
-
     useEffect(() => {
         if (user) {
-            fetch(`https://guarded-lowlands-14993.herokuapp.com/orders?email=${user.email}`, {
+            fetch(`http://localhost:4000//orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
