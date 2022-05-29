@@ -5,7 +5,7 @@ const useTools = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
 
-        fetch("https://guarded-lowlands-14993.herokuapp.com/products")
+        fetch("http://localhost:4000/products")
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

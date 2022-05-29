@@ -6,6 +6,8 @@ import signup from '../../images/signup.webp'
 import GoogleSignIn from './GoogleSignIn';
 import { Card, Col, Container, Form, FormControl, Row } from 'react-bootstrap';
 import { updateProfile } from "firebase/auth";
+import useToken from '../../hooks/useToken';
+import Loading from '../Loading';
 
 const Signup = () => {
     // declare the states......
@@ -21,11 +23,13 @@ const Signup = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    // Redirect to inventory page
+    const [token]  = useToken(user);
+
+    // Redirect to dashboard page
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || '/';
-    if (user) {
+    const from = location.state?.from?.pathname || '/dashboard';
+    if (token) {
         navigate(from, { replace: true })
     }
 
@@ -43,6 +47,10 @@ const Signup = () => {
 
     }
     const [sendEmailVerification] = useSendEmailVerification(auth);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     // click the sign up btn......
     const handleRegisterForm = (e) => {

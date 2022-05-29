@@ -7,6 +7,8 @@ import login from '../../images/login.jpg'
 import GoogleSignIn from './GoogleSignIn';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
+import Loading from '../Loading';
+import useToken from '../../hooks/useToken';
 
 
 const Login = () => {
@@ -24,6 +26,8 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token]  = useToken(user);
+
     // click login btn
     const handleLoginForm = (e) => {
         e.preventDefault()
@@ -35,8 +39,8 @@ const Login = () => {
     // Redirect to dashboard page
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || '/';
-    if (user) {
+    const from = location.state?.from?.pathname || '/dashboard';
+    if (token) {
         navigate(from, { replace: true })
     }
 
@@ -45,16 +49,20 @@ const Login = () => {
 
         if (email) {
             sendPasswordResetEmail(auth, email)
-               
+
             toast('Email Sent! Check Your Email.')
-            
+
         }
-        else{
+        else {
             toast('Enter your Email First')
-            
+
 
         }
 
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (

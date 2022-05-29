@@ -4,16 +4,25 @@ import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Col, Row } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
+import Loading from '../Loading';
 
 const GoogleSignIn = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [token]  = useToken(user);
     // Redirect to inventory page
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || '/';
-    if (user) {
+    const from = location.state?.from?.pathname || '/dashboard';
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+    if (token) {
         navigate(from, { replace: true })
     }
+   
 
     return (
         <>
