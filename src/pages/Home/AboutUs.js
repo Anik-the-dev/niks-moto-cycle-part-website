@@ -28,7 +28,7 @@ const AboutUs = () => {
                         <hr className='fw-bolder w-100' style={{ color: '#3d3d3d' }} />
                         <p className='text-center text-sm-start p-2 p-sm-0' style={{ color: '#000' }}>niksmoto established in 2005 from a passion of doing big.It is a huge honor for me to receive this award for being the employee of the year. I am deeply honored by my superiors for this recognition of my work. </p>
                         <p>
-                        <i class="bi bi-chat-dots text-warning "></i> <span className=' ps-2 fw-bold' style={{ color: '#F47C7C' }}>Whatsapp Us at: +019999999</span>
+                        <i class="bi bi-chat-dots text-success fs-3"></i> <span className=' ps-2 fw-bold' style={{ color: '#F47C7C' }}>Whatsapp Us at: +019999999</span>
                         </p>
                         
 
