@@ -5,6 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './style.css'
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home'
+import Footer from './pages/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
       </Routes>
+      <Footer></Footer>
 
     </div>
   );

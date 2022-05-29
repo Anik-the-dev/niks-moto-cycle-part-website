@@ -11,7 +11,7 @@ const BusinessData = () => {
             <div className='d-block d-md-flex align-items-center justify-content-center gap-5 w-75 mx-auto '>
                 <div className='bg-warning d-flex flex-column align-items-center mb-5 text-center border p-3 rounded'>
                     <i class="bi bi-emoji-smile-fill" style={{ fontSize: '40px', color: '#FFF' }}></i>
-                    <h2 className='fs-1 fw-bold' style={{ color: '#3d3d3d' }}>17200</h2>
+                    <h2 className='fs-1 fw-bold' style={{ color: '#3d3d3d' }}>817200</h2>
                     <p>Happy Customers</p>
                     <p>We are glad to have these loyal customers all over the globe from last 12 years. Here are some business data to show.</p>
                 </div>
