@@ -6,7 +6,7 @@ import UserTable from './UserTable';
 
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:4000//user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://salty-refuge-93523.herokuapp.com/user', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,7 +25,7 @@ const Users = () => {
 
 
 
-                    <h2 className='text-center my-5 fw-5'>All Users of pC Hut</h2>
+                    <h2 className='text-center my-5 fw-5'>User in nis Moto</h2>
 
                     <div class="table-responsive">
                         <Table striped bordered hover class="table">
@@ -44,7 +44,7 @@ const Users = () => {
                             <tbody>
 
                                 {
-                                    users.map((user,i) => <UserTable
+                                    users?.map((user,i) => <UserTable
                                         key={user._id}
                                         user={user}
                                         refetch={refetch}

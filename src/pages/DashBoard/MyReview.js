@@ -29,7 +29,7 @@ const MyReview = () => {
     const handleSendReview = () => {
         setReview(true)
         const data = { uName, uEmail, count, reviewText }
-        axios.post('http://localhost:4000//reviews', data).then(res => toast("Thanks for the review"))
+        axios.post('https://salty-refuge-93523.herokuapp.com/reviews', data).then(res => toast("Thanks for the review"))
 
     
 

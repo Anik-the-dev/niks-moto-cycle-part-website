@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
@@ -15,7 +14,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:4000//orders?email=${user.email}`, {
+            fetch(`https://salty-refuge-93523.herokuapp.com/orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -46,7 +45,7 @@ const MyOrder = () => {
 
 
 
-                    <h2 className='text-center my-5 fw-5'>My Orders in pC Hut</h2>
+                    <h2 className='text-center my-5 fw-5'>My OverAll Orders</h2>
 
                     <div class="table-responsive">
                         <Table striped bordered hover class="table">

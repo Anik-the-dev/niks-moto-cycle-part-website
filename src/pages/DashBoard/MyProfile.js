@@ -19,7 +19,7 @@ const MyProfile = () => {
     const handleProfileUpdate = (e) => {
         e.preventDefault()
         const data = { name,email, mobile, description, social }
-        axios.post('http://localhost:4000//user', data).then(res => toast("Profile Updated Successfully!"))
+        axios.post('https://salty-refuge-93523.herokuapp.com/user', data).then(res => toast("Profile Updated Successfully!"))
 
         e.target.reset()
 

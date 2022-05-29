@@ -19,7 +19,7 @@ const AddProducts = () => {
     const handleAddItems = (e) => {
         e.preventDefault()
         const data = { name, price, description, image, available_quantity, minimum__ordered_quantity }
-        axios.post('http://localhost:4000//products', data).then(res => toast("Product Added Successfully!"))
+        axios.post('https://salty-refuge-93523.herokuapp.com/products', data).then(res => toast("Product Added Successfully!"))
 
         e.target.reset()
 
