@@ -32,7 +32,7 @@ const Login = () => {
 
     }
 
-    // Redirect to inventory page
+    // Redirect to dashboard page
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
