@@ -27,7 +27,7 @@ const PrimaryNav = () => {
                         >
                             <Offcanvas.Header closeButton>
                                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                                    dudsfashion
+                                    niks moto.
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
