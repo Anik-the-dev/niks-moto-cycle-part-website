@@ -21,6 +21,7 @@ import AddProducts from './pages/DashBoard/AddProducts';
 import { ToastContainer} from 'react-toastify';
 import Purchase from './pages/Purchase';
 import MotoBlog from './pages/MotoBlog';
+import AboutUs from './pages/Home/AboutUs';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blog' element={<MotoBlog></MotoBlog>}></Route>
+        <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
