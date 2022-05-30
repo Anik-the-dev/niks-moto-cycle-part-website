@@ -45,7 +45,7 @@ const OrderTable = ({ singleItem }) => {
                         <Button onClick={() => navigate(`/payment/${_id}`)} className="btn btn-primary text-dark bg-warning px-4" style={{ border: 'none' }}>Pay Now</Button>
                     </td>
                     <td>
-                        <Button  onClick={() => handleDeleteItem(_id)} className="btn btn-danger text-light px-4" style={{ border: 'none' }}>Cancel</Button>
+                        <Button  onClick={() => handleDeleteItem(_id)} className="btn btn-danger text-light px-4" style={{ border: 'none' }}>X</Button>
                     </td>
                 </tr>
                 )

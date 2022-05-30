@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Card, Col, Container, Form,FormLabel, Row } from 'react-bootstrap';
+import { Card, Col, Container, Form, FormLabel, Row } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init'
 import { toast } from 'react-toastify';
@@ -11,10 +11,14 @@ const PurchaseForm = ({ item }) => {
     const uEmail = user?.email
     const [address, setAddress] = useState('')
     const [mobile, setMobile] = useState('')
+    const [error, setError] = useState(false)
     const [quantity, setQuantity] = useState(0)
     const { _id, name, image, description, price, minimum__ordered_quantity, available_quantity } = item
     const productId = _id
     const pName = name
+    console.log("items", item)
+    const min = parseFloat(minimum__ordered_quantity)
+    const max = parseFloat(available_quantity)
 
     // handle place my order.
     const handlePlaceMyOrder = (e) => {
@@ -24,6 +28,12 @@ const PurchaseForm = ({ item }) => {
 
         e.target.reset()
 
+    }
+
+    // handleQuantity
+    const handleQuantity = (e)=>{
+        setQuantity(e.target.value)
+        setError(true)
     }
     return (
         <Container>
@@ -100,26 +110,25 @@ const PurchaseForm = ({ item }) => {
 
                         <div className='d-flex align-items-center justify-content-center gap-3'>
                             <FormLabel className='mt-4'>Quantity:</FormLabel>
-                            <Form.Control className='mt-3 border-1' type="number" name="quantity" onChange={(e) => setQuantity(e.target.value)} required>
+                            <Form.Control className='mt-3 border-1' type="number" name="quantity" onChange={handleQuantity} required>
 
                             </Form.Control>
                         </div>
+                       
                         {
-                           ( quantity < minimum__ordered_quantity && quantity > available_quantity) ? <p className='fw-bold text-danger'>Check the Available and minimum ordered limit</p> : <p></p>
+                            (quantity >= min && quantity <= max)
+                                ?
+                                <input type="submit" value="Place The Order Now" className="btn btn-primary w-100 my-3 border-0 p-2 mx-auto" style={{ backgroundColor: "#F47C7C" }}></input>
+                                :
+                                <>
+                                    {
+                                        error && <p className='text-danger fw-bold'>Check the minimum and available quantity!</p>
+                                    }
+                                    
+                                    <input type="submit" value="Check Quantity Before Place Order" className="btn btn-primary w-100 my-3 border-0 p-2 mx-auto" disabled style={{ backgroundColor: "#F47C7C" }}></input>
+                                </>
 
                         }
-
-                        <input type="submit" value="Place The Order Now" className="btn btn-primary w-100 my-3 border-0 p-2 mx-auto" disabled={quantity < minimum__ordered_quantity && quantity > available_quantity} style={{ backgroundColor: "#F47C7C" }}></input>
-
-
-
-
-
-
-
-
-
-
 
                     </Form>
 

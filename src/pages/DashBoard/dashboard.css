@@ -4,6 +4,18 @@
 
 }
 
+.dashboard-list{
+    list-style-type: none;
+    line-height: 2.5;
+  
+    
+}
+
+.dashboard-list li{
+    border-bottom: 1px solid rgb(42, 42, 42);
+   
+}
+
 
 
 .sidebar-nav {
