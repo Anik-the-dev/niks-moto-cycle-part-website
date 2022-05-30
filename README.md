@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Niks Moto
+# Live: https://niksmoto.web.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features and Functions
+
+* Use RequireAuth and Use RequireAdmin for unAuthorized Access.
+* Use React Query for fetching Apis and UI's state management easier.
+* Using React Hooks for use same code multiple times.
+* Use Bootstrap for UI design
+* Use Admin Access Functionality for limiting features.
 
 ## Available Scripts
 
