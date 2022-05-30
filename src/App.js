@@ -20,6 +20,7 @@ import RequireAdmin from './pages/RequireAdmin';
 import AddProducts from './pages/DashBoard/AddProducts';
 import { ToastContainer} from 'react-toastify';
 import Purchase from './pages/Purchase';
+import MotoBlog from './pages/MotoBlog';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <PrimaryNav></PrimaryNav>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/blog' element={<MotoBlog></MotoBlog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
