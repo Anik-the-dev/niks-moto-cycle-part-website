@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const BusinessData = () => {
     return (
-        <Container style={{ marginTop: '50px', marginBottom: '100px' }}>
+        <Container style={{ marginTop: '150px', marginBottom: '100px' }}>
             <h1 className='fw-bold fs-1 text-center' style={{ color: '#F18500' }}>Our 12 Years Customers</h1>
             <p className='text-center'> We are glad to have these loyal customers all over the globe from last 12 years. Here are some business data to show.</p>
             <hr className='fw-bolder w-100 mb-5 ' style={{ color: '#3d3d3d' }} />

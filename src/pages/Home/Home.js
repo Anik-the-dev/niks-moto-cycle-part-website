@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutUs from './AboutUs';
+import Achievements from './Achievements';
 import Banner from './Banner/Banner'
 import BusinessData from './BusinessData';
 import FeaturedTools from './FeaturedTools';
@@ -12,8 +13,10 @@ const Home = () => {
             <Banner></Banner>
             <AboutUs></AboutUs>
             <FeaturedTools></FeaturedTools>
-            <BusinessData></BusinessData>
+            
             <Reviews></Reviews>
+            <Achievements></Achievements>
+            <BusinessData></BusinessData>
 
         </div>
     );

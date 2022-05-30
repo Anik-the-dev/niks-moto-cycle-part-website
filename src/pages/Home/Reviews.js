@@ -13,7 +13,7 @@ const FeaturedTools = () => {
             .then(data => setItems(data))
     }, [])
     return (
-        <div className='my-5 py-5'>
+        <div className='mb-5 py-5'>
             <div className='container'>
                 <div className='my-5'>
                     <h2 className='text-center fs-1 fw-bold' style={{ color: '#3d3d3d' }}>Our Loyal Users Recommendation</h2>

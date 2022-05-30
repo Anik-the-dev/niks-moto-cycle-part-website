@@ -36,6 +36,7 @@ const PrimaryNav = () => {
                                     <Nav.Link><Link className='menuitem' to='/'>Home</Link></Nav.Link>
                                     <Nav.Link><Link className='menuitem' to='/about/'>About</Link></Nav.Link>
                                     <Nav.Link><Link className='menuitem' to='/blog'>Blog</Link></Nav.Link>
+                                    <Nav.Link><Link className='menuitem' to='/reviews'>Reviews</Link></Nav.Link>
 
                                     {
                                         user?.uid ?

@@ -6,7 +6,7 @@ import ToolsCard from './ToolsCard';
 const FeaturedTools = () => {
     const [items,] = useTools()
     return (
-        <div className='my-5 py-5'>
+        <div className='mt-5 py-5'>
             <div className='container'>
                 <div className='my-5'>
                     <h2 className='text-center fs-1 fw-bold' style={{ color: '#3d3d3d' }}>Choice niks moto Best </h2>

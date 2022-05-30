@@ -25,7 +25,7 @@ const Users = () => {
 
 
 
-                    <h2 className='text-center my-5 fw-5'>User in nis Moto</h2>
+                    <h2 className='text-center my-5 fw-5'>User in niks Moto</h2>
 
                     <div class="table-responsive">
                         <Table striped bordered hover class="table">
