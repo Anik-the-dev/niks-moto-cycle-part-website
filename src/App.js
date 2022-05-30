@@ -23,6 +23,7 @@ import Purchase from './pages/Purchase';
 import MotoBlog from './pages/MotoBlog';
 import AboutUs from './pages/Home/AboutUs';
 import Reviews from './pages/Home/Reviews'
+import ManageInventory from './pages/DashBoard/ManageInventory';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
           <Route path='add' element={<RequireAdmin><AddProducts></AddProducts></RequireAdmin>}></Route>
+          <Route path='inventory' element={<RequireAdmin><ManageInventory></ManageInventory></RequireAdmin>}></Route>
         </Route>
 
       </Routes>

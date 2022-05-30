@@ -65,7 +65,7 @@ const MyProfile = () => {
 
 
 
-                            <input type="submit" value="Update Profile" className="btn btn-primary w-100 p-2 mt-3 text-dark bg-warning" style={{ border: 'none' }}></input>
+                            <input type="submit" value="Update Profile" className="btn btn-primary w-100 p-2 mt-3 text-dark " style={{ border: 'none' , backgroundColor:'#F47C7C' }}></input>
                         </form>
                         
 

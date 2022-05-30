@@ -37,6 +37,7 @@ const Dashboard = () => {
                                             <>
 
                                                 <Nav.Link><Link className='text-decoration-none fw-bold text-dark pb-2  ' to="/dashboard/add">Add Products</Link></Nav.Link>
+                                                <li><Link className='text-decoration-none fw-bold text-dark pb-2  ' to="/dashboard/inventory">Manage Products</Link></li>
                                                 <Nav.Link><Link className='text-decoration-none fw-bold text-dark pb-2  ' to="/dashboard/users">All User</Link></Nav.Link>
                                             </>
                                             :
@@ -78,6 +79,7 @@ const Dashboard = () => {
                             <>
 
                                 <li><Link className='text-decoration-none fw-bold text-dark pb-2  ' to="/dashboard/add">Add Products</Link></li>
+                                <li><Link className='text-decoration-none fw-bold text-dark pb-2  ' to="/dashboard/inventory">Manage Products</Link></li>
                                 <li><Link className='text-decoration-none fw-bold text-dark pb-2  ' to="/dashboard/users">All User</Link></li>
                             </>
                             :
