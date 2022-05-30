@@ -18,7 +18,10 @@ const PrimaryNav = () => {
             {['sm'].map((expand) => (
                 <Navbar key={expand} bg="light" expand={expand} className="mb-3">
                     <Container>
-                        <Navbar.Brand href="#" className=' fs-5'>niksmoto.</Navbar.Brand>
+                        {/* <Nav>
+                            <button className="btn btn-warning d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Dash</button>
+                        </Nav> */}
+                        <Navbar.Brand className=' fs-5'>niksmoto.</Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
