@@ -8,6 +8,7 @@ import { Card, Col, Container, Form, FormControl, Row } from 'react-bootstrap';
 import { updateProfile } from "firebase/auth";
 import useToken from '../../hooks/useToken';
 import Loading from '../Loading';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     // declare the states......
@@ -58,17 +59,13 @@ const Signup = () => {
         createUserWithEmailAndPassword(email, pass).then(() => {
             sendEmailVerification()
             handleUpdateProfile();
-            alert('Verification mail Sent. Check Your Email');
+            toast('Verification mail Sent. Check Your Email');
 
         })
         e.target.reset()
 
 
     }
-
-
-
-    console.log(user?.user)
 
     return (
         <Container>

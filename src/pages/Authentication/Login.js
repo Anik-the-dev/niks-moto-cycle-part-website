@@ -6,7 +6,7 @@ import { Card, Col, Container, Form, FormControl, Row } from 'react-bootstrap';
 import login from '../../images/login.jpg'
 import GoogleSignIn from './GoogleSignIn';
 import { sendPasswordResetEmail } from 'firebase/auth';
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import Loading from '../Loading';
 import useToken from '../../hooks/useToken';
 
@@ -114,7 +114,7 @@ const Login = () => {
 
                         <GoogleSignIn></GoogleSignIn>
                         <p className='mt-2 mx-auto fs-6'>If You are new Admin, Go to  <Link className='text-success text-decoration-none fw-6' to='/signup'>Sign Up Page.</Link></p>
-                        <ToastContainer />
+                        
 
                     </Card>
                 </Col>

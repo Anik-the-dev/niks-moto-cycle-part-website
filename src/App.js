@@ -18,6 +18,8 @@ import MyProfile from './pages/DashBoard/MyProfile';
 import Users from './pages/DashBoard/Users'
 import RequireAdmin from './pages/RequireAdmin';
 import AddProducts from './pages/DashBoard/AddProducts';
+import { ToastContainer} from 'react-toastify';
+import Purchase from './pages/Purchase';
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
+        <Route path='/purchase/:id' element={ <RequireAuth><Purchase/></RequireAuth>}></Route>
 
         <Route path='/dashboard' element={ <RequireAuth><Dashboard /></RequireAuth> }>
           <Route index element={<MyOrder></MyOrder>}></Route>
@@ -39,6 +42,7 @@ function App() {
 
       </Routes>
       <Footer></Footer>
+      <ToastContainer/>
 
     </div>
   );
