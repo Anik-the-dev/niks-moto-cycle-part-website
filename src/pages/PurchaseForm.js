@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Card, Col, Container, Form, FormControl, FormLabel, ListGroup, Row } from 'react-bootstrap';
+import {Card, Col, Container, Form,FormLabel, Row } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import auth from '../firebase.init'
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -10,10 +9,9 @@ const PurchaseForm = ({ item }) => {
     const [user] = useAuthState(auth);
     const uName = user?.displayName
     const uEmail = user?.email
-    const navigate = useNavigate()
     const [address, setAddress] = useState('')
     const [mobile, setMobile] = useState('')
-    const [quantity, setQuantity] = useState('')
+    const [quantity, setQuantity] = useState(0)
     const { _id, name, image, description, price, minimum__ordered_quantity, available_quantity } = item
     const productId = _id
     const pName = name
@@ -107,11 +105,11 @@ const PurchaseForm = ({ item }) => {
                             </Form.Control>
                         </div>
                         {
-                            (quantity < minimum__ordered_quantity && quantity > available_quantity) && <p className='fw-bold text-danger'>Check the Available and minimum ordered limit</p>
+                           ( quantity < minimum__ordered_quantity && quantity > available_quantity) ? <p className='fw-bold text-danger'>Check the Available and minimum ordered limit</p> : <p></p>
 
                         }
 
-                        <input type="submit" value="Place The Order Now" className="btn btn-primary w-100 my-3 border-0 p-2 mx-auto" disabled={(quantity < minimum__ordered_quantity && quantity > available_quantity)} style={{ backgroundColor: "#F47C7C" }}></input>
+                        <input type="submit" value="Place The Order Now" className="btn btn-primary w-100 my-3 border-0 p-2 mx-auto" disabled={quantity < minimum__ordered_quantity && quantity > available_quantity} style={{ backgroundColor: "#F47C7C" }}></input>
 
 
 
