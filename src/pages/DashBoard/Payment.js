@@ -3,6 +3,18 @@ import { Button, Card, Container } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Loading from "../Loading";
+import { loadStripe } from "@stripe/stripe-js";
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
+import CheckoutForm from "./CheckoutForm";
+
+const stripePromise = loadStripe(
+  "pk_test_51LNyfKBUF31wJjgfLVbzcjphO7Kdrj2JnpYk6bzjIbCSURndLIpBgCH7f0wPDagARxpppJJOL9JjaFvOoN372VN50083HRLd8U"
+);
 
 const Payment = () => {
   const { id } = useParams();
@@ -30,7 +42,8 @@ const Payment = () => {
       <Card className="p-5 mt-5">
         <div>
           <h2 className="mt-5 fs-1 fw-bold ">
-          Hello <span style={{color:"#F47C7C"}}>{uName},</span> Thanks for make an Order.
+            Hello <span style={{ color: "#F47C7C" }}>{uName},</span> Thanks for
+            make an Order.
           </h2>
         </div>
         <div>
@@ -42,9 +55,17 @@ const Payment = () => {
           </ul>
         </div>
 
-        <div>
-          <Button className="raw-btn"><span className="fs-3">You have to Pay: ${total}</span></Button>
+        <div className="mb-5">
+          <div className="raw-btn">
+            <span className="fs-3">You have to Pay: ${total}</span>
+          </div>
         </div>
+      </Card>
+      <p className="mt-5 fs-4 fw-bold">Add your credit card:</p>
+      <Card className="p-5  w-50 ">
+        <Elements stripe={stripePromise}>
+          <CheckoutForm />
+        </Elements>
       </Card>
     </Container>
   );
