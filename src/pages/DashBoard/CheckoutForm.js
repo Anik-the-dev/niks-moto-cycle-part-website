@@ -20,7 +20,7 @@ const CheckoutForm = ({ orderedItem , total }) => {
 
   // post price to backend..............
   useEffect(() => {
-    fetch("http://localhost:4000/create-payment-intent", {
+    fetch("https://salty-refuge-93523.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",

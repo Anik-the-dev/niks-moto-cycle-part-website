@@ -23,7 +23,7 @@ const DisplayItemCard = ({ singleItem }) => {
 
 
 
-        fetch(`http://localhost:4000/products/${_id}`, {
+        fetch(`https://salty-refuge-93523.herokuapp.com/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const DisplayItemCard = ({ singleItem }) => {
                 toast("Product Added Successfully!")
                 e.target.reset()
                 if (data.modifiedCount > 0) {
-                    fetch(`http://localhost:4000/products/${_id}`)
+                    fetch(`https://salty-refuge-93523.herokuapp.com/products/${_id}`)
                         .then(res => res.json())
                         .then(data => {
                             setModifiedData(data)
