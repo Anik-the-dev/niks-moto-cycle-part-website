@@ -42,7 +42,7 @@ const InventoryTable = ({ singleItem }) => {
                     <td>{item.minimum__ordered_quantity}</td>
                     
                     <td>
-                        <Button onClick={() => navigate(`/inventory/${_id}`)} className="btn btn-primary text-light px-4" style={{ backgroundColor: "#21C9B6", border: 'none' }}>Update</Button>
+                        <Button onClick={() => navigate(`/dashboard/inventory/${_id}`)} className="btn btn-primary text-light px-4" style={{ backgroundColor: "#21C9B6", border: 'none' }}>Update</Button>
                     </td>
                     <td>
                         <Button onClick={() => handleDeleteItem(_id)} className="btn btn-danger text-light px-4" style={{ border: 'none' }}>X</Button>

@@ -26,6 +26,7 @@ import Reviews from './pages/Home/Reviews'
 import ManageInventory from './pages/DashBoard/ManageInventory';
 import Payment from './pages/DashBoard/Payment';
 import BrowseProducts from './pages/BrowseProducts';
+import DisplayItem from './pages/DashBoard/DisplayItem';
 
 function App() {
   return (
@@ -38,8 +39,7 @@ function App() {
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/reviews' element={<Reviews></Reviews>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<Signup></Signup>}></Route>
-        <Route path='*' element={<Notfound></Notfound>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>        
         <Route path='/purchase/:id' element={ <RequireAuth><Purchase/></RequireAuth>}></Route>
 
         <Route path='/dashboard' element={ <RequireAuth><Dashboard /></RequireAuth> }>
@@ -50,7 +50,9 @@ function App() {
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
           <Route path='add' element={<RequireAdmin><AddProducts></AddProducts></RequireAdmin>}></Route>
           <Route path='inventory' element={<RequireAdmin><ManageInventory></ManageInventory></RequireAdmin>}></Route>
+          <Route path='inventory/:id' element={<RequireAdmin><DisplayItem></DisplayItem></RequireAdmin>}></Route>
         </Route>
+        <Route path='*' element={<Notfound></Notfound>}></Route>
 
       </Routes>
       <Footer></Footer>
