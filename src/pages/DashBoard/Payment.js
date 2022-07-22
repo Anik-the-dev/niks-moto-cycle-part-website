@@ -64,7 +64,7 @@ const Payment = () => {
       <p className="mt-5 fs-4 fw-bold">Add your credit card:</p>
       <Card className="p-5  w-50 ">
         <Elements stripe={stripePromise}>
-          <CheckoutForm orderedItem = {data}/>
+          <CheckoutForm orderedItem = {data} total = {total}/>
         </Elements>
       </Card>
     </Container>

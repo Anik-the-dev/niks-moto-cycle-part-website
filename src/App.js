@@ -25,6 +25,7 @@ import AboutUs from './pages/Home/AboutUs';
 import Reviews from './pages/Home/Reviews'
 import ManageInventory from './pages/DashBoard/ManageInventory';
 import Payment from './pages/DashBoard/Payment';
+import BrowseProducts from './pages/BrowseProducts';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <PrimaryNav></PrimaryNav>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/allproducts' element={<BrowseProducts></BrowseProducts>}></Route>
         <Route path='/blog' element={<MotoBlog></MotoBlog>}></Route>
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/reviews' element={<Reviews></Reviews>}></Route>

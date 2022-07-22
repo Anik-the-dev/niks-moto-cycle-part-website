@@ -6,8 +6,9 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import Loading from "../Loading";
 
-const CheckoutForm = ({ orderedItem }) => {
+const CheckoutForm = ({ orderedItem , total }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -25,7 +26,7 @@ const CheckoutForm = ({ orderedItem }) => {
         "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
-      body: JSON.stringify({ price }),
+      body: JSON.stringify({ total }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -33,11 +34,12 @@ const CheckoutForm = ({ orderedItem }) => {
           setClientSecret(data.clientSecret);
         }
       });
-  }, [price]);
+  }, [total]);
 
   //   while clicking pay button..............
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (!stripe || !elements) {
       return;
     }
@@ -45,7 +47,7 @@ const CheckoutForm = ({ orderedItem }) => {
     if (card === null) {
       return;
     }
-
+    
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card,
@@ -53,9 +55,10 @@ const CheckoutForm = ({ orderedItem }) => {
 
     setCardError(error?.message || "");
     setSuccess("");
-    setProcessing(true);
+    setProcessing(true)
     // confirm card payment
     const { paymentIntent, error: intentError } =
+     
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: card,
@@ -65,21 +68,28 @@ const CheckoutForm = ({ orderedItem }) => {
           },
         },
       });
+      
 
     if (intentError) {
       setCardError(intentError?.message);
       setProcessing(false);
     } else {
+      setProcessing(false);
       setCardError("");
       setTransactionId(paymentIntent.id);
       console.log(paymentIntent);
       setSuccess("Congrats! Your payment is completed.");
+      
     }
   };
+
 
   return (
     <>
       <form onSubmit={handleSubmit}>
+        {
+          processing && <Loading></Loading>
+        }
         <CardElement
           options={{
             style: {
@@ -109,9 +119,9 @@ const CheckoutForm = ({ orderedItem }) => {
       {success && (
         <div className="text-success fw-bold mt-3">
           <p>{success} </p>
-          <p>
+          <p className="text-dark">
             Your transaction Id:{" "}
-            <span className="text-danger fw-bold">{transactionId}</span>{" "}
+            <span className="text-primary">{transactionId}</span>{" "}
           </p>
         </div>
       )}

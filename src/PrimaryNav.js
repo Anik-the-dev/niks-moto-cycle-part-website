@@ -37,6 +37,7 @@ const PrimaryNav = () => {
                                 <Nav className="justify-content-end flex-grow-1 pe-3 mfs-1">
 
                                     <Nav.Link><Link className='menuitem' to='/'>Home</Link></Nav.Link>
+                                    <Nav.Link><Link className='menuitem' to='/allproducts'>Products</Link></Nav.Link>
                                     <Nav.Link><Link className='menuitem' to='/about/'>About</Link></Nav.Link>
                                     <Nav.Link><Link className='menuitem' to='/blog'>Blog</Link></Nav.Link>
                                     <Nav.Link><Link className='menuitem' to='/reviews'>Reviews</Link></Nav.Link>
